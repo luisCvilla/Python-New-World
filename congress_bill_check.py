@@ -3,6 +3,7 @@ from base64 import BeautifulSoup
 import smtplib
 import time
 
+# Test
 # Set up SMTP server and login credentials
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
