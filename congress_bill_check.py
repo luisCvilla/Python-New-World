@@ -1,16 +1,16 @@
-import requests
-from base64 import BeautifulSoup
+from beautifulsoup4 import BeautifulSoup
 import smtplib
 import time
+from urllib import request
 
 # Set up SMTP server and login credentials
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
-email_address = "your-email-address@gmail.com"
-password = "your-email-password"
+email_address = "vigilsigilperil@gmail.com"
+password = "carstone"
 
 # URL to the news website you want to scrape
-url = "https://www.congress.gov/news/"
+url = "https://www.congress.gov/search?q=%7B%22source%22%3A%22legislation%22%2C%22congress%22%3A118%7D"
 
 # List of bills that have already been seen
 seen_bills = []
@@ -19,7 +19,7 @@ seen_bills = []
 while True:
 
     # Send a GET request to the website
-    response = requests.get(url)
+    response = request.get(url)
 
     # Parse the HTML content using BeautifulSoup
     soup = BeautifulSoup(response.content, "html.parser")
